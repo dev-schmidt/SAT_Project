@@ -1,0 +1,50 @@
+﻿@model SAT_Project.UI.MVC.Models.ContactViewModel
+
+@{
+    ViewData["Title"] = "Contact";
+}
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+<div>
+    <div class="container">
+
+        <div class="section-title">
+            <h1>Contact Us</h1>
+            <p>todo "Something for the top of the contact page"</p>
+        </div>
+
+        <div class="row" data-aos="fade-in">
+
+
+            <div class="col-lg-6">
+                <form asp-action="Contact">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <input asp-for="Name" class="form-control" placeholder="Name..." />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="Email" class="form-control mt-2" placeholder="Email..." />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="Subject" class="form-control mt-2" placeholder="Subject..." />
+                        <span asp-validation-for="Subject" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <textarea asp-for="Message" class="form-control mt-2" placeholder="Message..."></textarea>
+                        <span asp-validation-for="Message" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mt-4 text-center">
+                        <input type="submit" value="Send Message" class="btn btn-danger" />
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>

@@ -5,21 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SAT_Project.DATA.EF.MetaData
+namespace SAT_Project.DATA.EF.Models//.MetaData
 {
     public class EnrollmentsMetadata 
     {
-        [Required(ErrorMessage = "Enrollment ID is required")]
-        [Display(Name = "EnrollmentId")]
-        public int EnrollmentId { get; set; }
-
-        [Required(ErrorMessage = "Student ID is required")]
-        [Display(Name = "StudentId")]
-        public int StudentId { get; set; }
-
-        [Required(ErrorMessage = "Scheduled class ID is required")]
-        [Display(Name = "ScheduledClassId")]
-        public int ScheduledClassId { get; set; }
 
         [Required(ErrorMessage = "Enrollment date is required")]
         [Display(Name = "EnrollmentDate")]
@@ -28,10 +17,6 @@ namespace SAT_Project.DATA.EF.MetaData
 
     public class CoursesMetadata
     {
-        [Required(ErrorMessage = "Course ID is required")]
-        [Display(Name = "CourseId")]
-        public int CourseId { get; set; }
-
         [Required(ErrorMessage = "Course name is required")]
         [StringLength(50, ErrorMessage = "*Max 50 characters")]
         [Display(Name = "CourseName")]
@@ -97,7 +82,7 @@ namespace SAT_Project.DATA.EF.MetaData
 
     }
 
-    public class SheduledClassesMetadata
+    public class ScheduledClassesMetadata
     {
         [Required(ErrorMessage = "Start Date Required")]
         [Display(Name = "Start Date")]
@@ -120,15 +105,15 @@ namespace SAT_Project.DATA.EF.MetaData
 
     }
 
-    public class Enrollments
+    public class ScheduledClassStatusMetadata
     {
-        [Required(ErrorMessage = "Enrollment Date Required")]
-        [Display(Name = "Enrollment Date")]
-        [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
-        public DateTime EnrollmentDate { get; set; }
+        [Required(ErrorMessage = "Scheduled class status name Required")]
+        [StringLength(50, ErrorMessage = "*Maximum 50 characters")]
+        [Display(Name = "ScheduledClassStatusName")]
+        public string SCSName { get; set; } = null!;
     }
 
-    public class SudentStatues
+    public class StudentStatusMetadata
     {
         [Required(ErrorMessage = "Student Service Name Required")]
         [StringLength(40, ErrorMessage = "*Maximum 30 characters")]

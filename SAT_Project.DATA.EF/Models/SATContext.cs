@@ -34,7 +34,7 @@ namespace SAT_Project.DATA.EF.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=.\\sqlexpress;database=SAT;trusted_connection=true;multipleactiveresultsets=true;");
+                optionsBuilder.UseSqlServer("server=.\\sqlexpress;database=SAT;trusted_connection=true;multipleactiveresultsets=true;");
             }
         }
 
@@ -154,9 +154,9 @@ namespace SAT_Project.DATA.EF.Models
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Enrollments_ScheduledClasses");
 
-                entity.HasOne(d => d.Sudent)
+                entity.HasOne(d => d.Student)
                     .WithMany(p => p.Enrollments)
-                    .HasForeignKey(d => d.SudentId)
+                    .HasForeignKey(d => d.StudentId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Enrollments_Students");
             });

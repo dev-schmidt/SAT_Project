@@ -6,11 +6,11 @@ namespace SAT_Project.DATA.EF.Models
     public partial class Enrollment
     {
         public int EnrollmentId { get; set; }
-        public int SudentId { get; set; }
+        public int StudentId { get; set; }
         public int ScheduledClassId { get; set; }
         public DateTime EnrollmentDate { get; set; }
 
-        public virtual ScheduledClass ScheduledClass { get; set; } = null!;
-        public virtual Student Sudent { get; set; } = null!;
+        public virtual ScheduledClass? ScheduledClass { get; set; }
+        public virtual Student? Student { get; set; }
     }
 }

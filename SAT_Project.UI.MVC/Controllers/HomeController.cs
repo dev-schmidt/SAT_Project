@@ -21,6 +21,11 @@ namespace SAT_Project.UI.MVC.Controllers
             return View();
         }
 
+        public IActionResult About()
+        {
+            return View();
+        }
+
         [HttpPost]
         public IActionResult Contact(ContactViewModel cvm)
         {

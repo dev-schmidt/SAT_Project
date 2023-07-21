@@ -11,24 +11,32 @@ namespace SAT_Project.DATA.EF.Models//.MetaData
     {
 
         [Required(ErrorMessage = "Enrollment date is required")]
-        [Display(Name = "EnrollmentDate")]
+        [Display(Name = "Enrollment Date")]
+        [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
         public DateTime EnrollmentDate { get; set; }
+
+        [Display(Name = "Student Name")]
+        public int StudentId { get; set; }
+
+        [Display(Name = "Scheduled Class")]
+        public int ScheduledClassId { get; set; }
+
     }
 
     public class CoursesMetadata
     {
         [Required(ErrorMessage = "Course name is required")]
         [StringLength(50, ErrorMessage = "*Max 50 characters")]
-        [Display(Name = "CourseName")]
+        [Display(Name = "Course Name")]
         public string CourseName { get; set; } = null!;
 
         [Required(ErrorMessage = "Course description is required")]
         [StringLength(500, ErrorMessage = "*Max 500 characters")]
-        [Display(Name = "CourseDescription")]
+        [Display(Name = "Course Description")]
         public string CourseDescription { get; set; } = null!;
 
         [Required(ErrorMessage = "Amount of credit hours is required")]
-        [Display(Name = "CreditHours")]
+        [Display(Name = "Credit Hours")]
         public byte CreditHours { get; set; }
 
         [StringLength(250, ErrorMessage = "*Max 250 characters")]
@@ -39,7 +47,7 @@ namespace SAT_Project.DATA.EF.Models//.MetaData
         [Display(Name = "Notes")]
         public string? Notes { get; set; }
 
-        [Display(Name = "IsActive")]
+        [Display(Name = "Is Active")]
         public bool IsActive { get; set; }
     }
 
@@ -103,13 +111,17 @@ namespace SAT_Project.DATA.EF.Models//.MetaData
         [StringLength(20, ErrorMessage = "*Maximum 20 characters")]
         public string Location { get; set; } = null!;
 
+
+        [Display(Name = "Scheduled Class Status")]
+        public int Scisid { get; set; }
+
     }
 
     public class ScheduledClassStatusMetadata
     {
         [Required(ErrorMessage = "Scheduled class status name Required")]
         [StringLength(50, ErrorMessage = "*Maximum 50 characters")]
-        [Display(Name = "ScheduledClassStatusName")]
+        [Display(Name = "Scheduled Class Status Name")]
         public string SCSName { get; set; } = null!;
     }
 
@@ -118,11 +130,11 @@ namespace SAT_Project.DATA.EF.Models//.MetaData
         [Required(ErrorMessage = "Student Service Name Required")]
         [StringLength(40, ErrorMessage = "*Maximum 30 characters")]
         [Display(Name = "Student Service Name")]
-        public string SSName { get; set; } = null!;
+        public string Ssname { get; set; } = null!;
 
         [StringLength(40, ErrorMessage = "*Maximum 250 characters")]
         [Display(Name = "Student Service Description")]
-        public string? SSDescription { get; set; } = null!;
+        public string? Ssdescritpion { get; set; } = null!;
     }
 
 }
